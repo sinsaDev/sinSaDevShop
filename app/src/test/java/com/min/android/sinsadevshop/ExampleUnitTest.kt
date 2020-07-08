@@ -1,4 +1,4 @@
-package com.ninano.karaoke.sinsadevshop
+package com.min.android.sinsadevshop
 
 import org.junit.Test
 

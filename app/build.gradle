@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -12,8 +13,8 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.ninano.karaoke.sinsadevshop"
-        minSdkVersion 16
+        applicationId "com.min.android.sinsadevshop"
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"

@@ -1,4 +1,4 @@
-package com.ninano.karaoke.sinsadevshop
+package com.min.android.sinsadevshop
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
