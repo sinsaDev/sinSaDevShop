@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ObservableField
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.min.android.sinsadevshop.R
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private val MULTIPLE_PERMISSIONS = 101
 
     val checkPermission = CheckPermission(this,PERMISSIONS,MULTIPLE_PERMISSIONS)
+    val userFragment = UserFlagment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,11 +37,16 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.main=this
 
         checkPermission.startCheckPermissions()
+        switchFragment(userFragment)
 
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array< String>, grantResults: IntArray) {
         checkPermission.permissionsAdd(requestCode,permissions,grantResults)
+    }
+
+    fun switchFragment(flagment : Fragment){
+        supportFragmentManager.beginTransaction().replace(R.id.frame,flagment).commit();
     }
 
 }
