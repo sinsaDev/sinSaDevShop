@@ -3,6 +3,7 @@ package com.min.android.sinsadevshop.views
 import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ObservableField
@@ -37,12 +38,17 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.main=this
 
         checkPermission.startCheckPermissions()
-        switchFragment(userFragment)
+
 
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array< String>, grantResults: IntArray) {
         checkPermission.permissionsAdd(requestCode,permissions,grantResults)
+    }
+
+    fun btnClick(view : View){
+        Toast.makeText(this,"dkdk",Toast.LENGTH_SHORT).show()
+        switchFragment(userFragment)
     }
 
     fun switchFragment(flagment : Fragment){

@@ -9,11 +9,11 @@ import androidx.fragment.app.Fragment
 import com.min.android.sinsadevshop.R
 
 class UserFlagment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+
+
+
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.activity_user_flagment, null)
         return view
     }
