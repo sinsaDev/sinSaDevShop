@@ -7,13 +7,13 @@
         <import type="android.view.View" />
         <variable
             name="main"
-            type="com.min.android.sinsadevshop.views.MainActivity" />
+            type="com.min.android.sinsadevshop.views.activity.MainActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".views.MainActivity">
+        tools:context=".views.activity.MainActivity">
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -1,20 +1,19 @@
-package com.min.android.sinsadevshop.views
+package com.min.android.sinsadevshop.views.activity
 
 import android.Manifest
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ObservableField
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import com.min.android.sinsadevshop.R
 import com.min.android.sinsadevshop.databinding.ActivityMainBinding
 import com.min.android.sinsadevshop.utils.CheckPermission
-import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.StringBuilder
+import com.min.android.sinsadevshop.views.fragment.UserFragment
+import org.koin.core.context.startKoin
+import kotlin.math.log
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     private val MULTIPLE_PERMISSIONS = 101
 
     val checkPermission = CheckPermission(this,PERMISSIONS,MULTIPLE_PERMISSIONS)
-    val userFragment = UserFlagment()
+    val userFragment = UserFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +39,11 @@ class MainActivity : AppCompatActivity() {
         checkPermission.startCheckPermissions()
 
 
+
     }
+
+
+
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array< String>, grantResults: IntArray) {
         checkPermission.permissionsAdd(requestCode,permissions,grantResults)
@@ -49,6 +52,10 @@ class MainActivity : AppCompatActivity() {
     fun btnClick(view : View){
         Toast.makeText(this,"dkdk",Toast.LENGTH_SHORT).show()
         switchFragment(userFragment)
+    }
+
+    fun btnMoveLogin(view: View){
+
     }
 
     fun switchFragment(flagment : Fragment){
