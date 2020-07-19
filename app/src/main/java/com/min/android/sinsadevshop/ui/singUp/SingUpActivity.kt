@@ -1,7 +1,6 @@
-package com.min.android.sinsadevshop.views.activity
+package com.min.android.sinsadevshop.ui.singUp
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.min.android.sinsadevshop.R
 

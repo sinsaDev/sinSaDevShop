@@ -18,12 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".views.activity.LoginActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name=".views.activity.SingUpActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
+
         <activity
-            android:name=".views.activity.MainActivity"
+            android:name=".ui.login.LoginActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.singUp.SingUpActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.main.MainActivity"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

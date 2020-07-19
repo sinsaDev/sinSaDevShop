@@ -1,22 +1,25 @@
-package com.min.android.sinsadevshop.views.activity
+package com.min.android.sinsadevshop.ui.main
 
 import android.Manifest
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.min.android.sinsadevshop.R
 import com.min.android.sinsadevshop.databinding.ActivityMainBinding
+import com.min.android.sinsadevshop.ui.base.BaseActivity
 import com.min.android.sinsadevshop.utils.CheckPermission
-import com.min.android.sinsadevshop.views.fragment.UserFragment
-import org.koin.core.context.startKoin
-import kotlin.math.log
+import com.min.android.sinsadevshop.ui.fragment.UserFragment
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+
+    @LayoutRes
+    override fun getLayoutResId() = R.layout.activity_main
 
     lateinit var activityMainBinding: ActivityMainBinding
     private val PERMISSIONS = arrayListOf(
@@ -33,8 +36,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
-        activityMainBinding.main=this
+        /*activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        activityMainBinding.main=this*/
+
+        //binding.main =getViewModel()
 
         checkPermission.startCheckPermissions()
 

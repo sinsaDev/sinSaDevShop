@@ -1,10 +1,10 @@
-package com.min.android.sinsadevshop.views.activity
+package com.min.android.sinsadevshop.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.min.android.sinsadevshop.R
+import com.min.android.sinsadevshop.ui.singUp.SingUpActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -14,7 +14,8 @@ class LoginActivity : AppCompatActivity() {
 
         singup_Btn.setOnClickListener{
 
-            val singupIntent = Intent(this,SingUpActivity::class.java)
+            val singupIntent = Intent(this,
+                SingUpActivity::class.java)
             startActivity(singupIntent)
         }
     }
