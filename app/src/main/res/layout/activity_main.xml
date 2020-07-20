@@ -7,7 +7,7 @@
         <import type="android.view.View" />
         <variable
             name="main"
-            type="com.min.android.sinsadevshop.ui.main.MainActivity" />
+            type="com.min.android.sinsadevshop.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,7 +63,7 @@
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="@{main::btnClick}"
+                    android:onClick="@{()->main.click()}"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ic_user_on" />
 

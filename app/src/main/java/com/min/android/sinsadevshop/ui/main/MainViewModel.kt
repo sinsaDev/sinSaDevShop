@@ -1,4 +1,11 @@
 package com.min.android.sinsadevshop.ui.main
 
-class MainViewModel {
+import com.min.android.sinsadevshop.ui.base.BaseViewModel
+
+class MainViewModel(private val dd : Int) : BaseViewModel() {
+
+
+    fun click(){
+
+    }
 }
