@@ -18,7 +18,6 @@ class UserFragment : Fragment() {
 
 
 
-
         view.login_Btn.setOnClickListener {
             val loginIntent = Intent(view.context, LoginActivity::class.java)
             startActivity(loginIntent)

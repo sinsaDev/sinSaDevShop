@@ -2,21 +2,21 @@ package com.min.android.sinsadevshop.ui.base
 
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.ViewModel
-import io.reactivex.disposables.CompositeDisposable
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancel
 
-abstract class BaseViewModel : ViewModel(), LifecycleObserver {
 
-    protected val TAG = javaClass.simpleName
-    protected val compositeDisposable by lazy { CompositeDisposable() }
+abstract class BaseViewModel : ViewModel() {
+
+    private val TAG = javaClass.simpleName
+
+
 
     override fun onCleared() {
-
-        with(compositeDisposable){
-            clear()
-            dispose()
-        }
-
         super.onCleared()
+
     }
 
 

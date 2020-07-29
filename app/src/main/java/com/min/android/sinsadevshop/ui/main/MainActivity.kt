@@ -16,12 +16,13 @@ import com.min.android.sinsadevshop.ui.fragment.UserFragment
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class MainActivity : BaseActivity() {
 
-    @LayoutRes
-    override fun getLayoutResId() = R.layout.activity_main
+    /*@LayoutRes
+    override fun getLayoutResId() = R.layout.activity_main*/
+    private val binding : ActivityMainBinding by binding(R.layout.activity_main)
 
-    lateinit var activityMainBinding: ActivityMainBinding
+
     private val PERMISSIONS = arrayListOf(
         Manifest.permission.RECORD_AUDIO,
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -39,7 +40,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
        /* activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         activityMainBinding.main=this*/
 
-        //binding.main =getViewModel()
+        binding.apply {
+            main = getViewModel()
+        }
+        /*binding.main =getViewModel()*/
 
         checkPermission.startCheckPermissions()
 

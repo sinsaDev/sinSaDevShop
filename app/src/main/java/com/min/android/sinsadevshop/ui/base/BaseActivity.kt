@@ -8,13 +8,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.min.android.sinsadevshop.databinding.ActivityMainBinding
 
-abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(){
+abstract class BaseActivity : AppCompatActivity(){
 
+    protected inline fun <reified T : ViewDataBinding> binding(
+        @LayoutRes resId : Int
+    ):Lazy<T> = lazy { DataBindingUtil.setContentView<T>(this,resId) }
     //레이아웃의 아이디 받아오는 곳
-    @LayoutRes
-    abstract fun getLayoutResId() : Int
+//    @LayoutRes
+//    abstract fun getLayoutResId() : Int
 
-    protected lateinit var binding: T
+    /*protected lateinit var binding: T
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,5 +26,5 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(){
         binding = DataBindingUtil.setContentView(this, getLayoutResId())
 
 
-    }
+    }*/
 }
